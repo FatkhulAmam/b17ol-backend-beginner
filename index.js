@@ -31,6 +31,21 @@ app.patch('/profile', (req, res)=>{
     res.send(data)
 })
 
+app.put('/profile', (req, res)=>{
+    const {name, batch, email} = req.body
+    if(name && batch && email){
+        data ={
+            ...req.body
+        }
+        res.send(data)
+    }else{
+        res.status(400).send({
+            success: 'false',
+            message : 'All form must be filled'
+        })
+    }
+})
+
 app.listen(2323,()=>{
     console.log("aplication running in port 2323")
 })
