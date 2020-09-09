@@ -18,6 +18,19 @@ app.post('/profile', (req, res)=>{
     res.send(req.body)
 })
 
+let data ={
+    nama:'jane',
+    batch: 17.2,
+    email:'janeidin@gmail.com'
+}
+app.patch('/profile', (req, res)=>{
+    data={
+        ...data,
+        ...req.body
+    }
+    res.send(data)
+})
+
 app.listen(2323,()=>{
     console.log("aplication running in port 2323")
 })
