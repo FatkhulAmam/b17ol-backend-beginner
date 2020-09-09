@@ -46,6 +46,11 @@ app.put('/profile', (req, res)=>{
     }
 })
 
+app.delete('/profile', (req, res)=>{
+    data = null
+    res.send(data)
+})
+
 app.listen(2323,()=>{
     console.log("aplication running in port 2323")
 })
